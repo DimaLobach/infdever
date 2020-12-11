@@ -24,22 +24,14 @@
       firebase.analytics();
     </script>
     <script>
-      function saveToFirebase(email) {
-      var emailObject = {
-          email: email
-      };
-
-      firebase.database.ref('subscription-entries').push().set(emailObject)
-          .then(function(snapshot) {
-              success(); // some success method
-          }, function(error) {
-              console.log('error' + error);
-              error(); // some error method
-          });
-        }
-
-      saveToFirebase("fg");
-      
+      function writeUserData(userId, name, email, imageUrl) {
+        firebase.database().ref('users/' + userId).set({
+          username: name,
+          email: email,
+          profile_picture : imageUrl
+        });
+      }
+      writeUserData("1", "Dima", "g", "dedd")
       
       
       var data = window.location.search.substr(1);
