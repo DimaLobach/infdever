@@ -3,7 +3,8 @@
 
 <script>
   var data = window.location.search.substr(1);
-  console.log(data.split('&'));
+  var dts = data.split('&');
+  dts.forEach(element => console.log(element.split('=') + '\n'));
 </script>
 
 </body>
