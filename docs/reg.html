@@ -21,6 +21,9 @@
         measurementId: "G-J07LRNWDZD"
       };
       // Initialize Firebase
+      var firebase = require('firebase/app');
+      require('firebase/auth');
+      require('firebase/database');
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
